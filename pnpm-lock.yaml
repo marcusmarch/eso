@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@prisma/nuxt':
+        specifier: ^0.0.35
+        version: 0.0.35(magicast@0.3.5)(prisma@5.21.0)(rollup@4.24.0)(vite@5.4.9(@types/node@22.7.5)(terser@5.34.1))
       nuxt:
         specifier: ^3.13.0
         version: 3.13.2(@parcel/watcher@2.4.1)(@types/node@22.7.5)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.24.0)(terser@5.34.1)(vite@5.4.9(@types/node@22.7.5)(terser@5.34.1))
@@ -17,6 +20,13 @@ importers:
       vue-router:
         specifier: latest
         version: 4.4.5(vue@3.5.12)
+    devDependencies:
+      '@prisma/client':
+        specifier: 5.21.0
+        version: 5.21.0(prisma@5.21.0)
+      prisma:
+        specifier: 5.21.0
+        version: 5.21.0
 
 packages:
 
@@ -789,6 +799,33 @@ packages:
 
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
+
+  '@prisma/client@5.21.0':
+    resolution: {integrity: sha512-Qf2YleB3dsCRXiKSQZ+j0aF5E+ojpfqF8ExXaNAWBbAhKapMduwNvgo13K2pEuTiQq8voG2aQPQnxjsO9fOpTQ==}
+    engines: {node: '>=16.13'}
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+
+  '@prisma/debug@5.21.0':
+    resolution: {integrity: sha512-8gX68E36OKImh7LBz5fFIuTRLZgM1ObnDA8ukhC1kZvTK7k7Unti6pJe3ZiudzuFAxae06PV1rhq1u9DZbXVnQ==}
+
+  '@prisma/engines-version@5.21.0-36.08713a93b99d58f31485621c634b04983ae01d95':
+    resolution: {integrity: sha512-hfq7c8MnkhcZTY0bGXG6bV5Cr7OsnHLERNy4xkZy6rbpWnhtfjuj3yUVM4u1GKXd6uWmFbg0+HDw8KXTgTVepQ==}
+
+  '@prisma/engines@5.21.0':
+    resolution: {integrity: sha512-IBewQJiDnFiz39pl8kEIzmzV4RAoBPBD2DoLDntMMXObg1an90Dp+xeb1mmwrTgRDE3elu/LYxyVPEkKw9LZ7A==}
+
+  '@prisma/fetch-engine@5.21.0':
+    resolution: {integrity: sha512-nXKJrsxVKng6yjJzl7vBjrr3S34cOmWQ9SiGTo9xidVTmVSgg5GCTwDL4r2be8DE3RntqK5BW2LWQ1gF80eINw==}
+
+  '@prisma/get-platform@5.21.0':
+    resolution: {integrity: sha512-NAyaAcHJhs0IysGYJtM6Fm3ccEs/LkCZqz/8riVkkJswFrRtFV93jAUIVKWO/wj1Ca1gO7HaMd/tr6e/9Xmvww==}
+
+  '@prisma/nuxt@0.0.35':
+    resolution: {integrity: sha512-p8AeISCMGDnMDRj7EOcvM/T61Qy7+RauzMR3zU7V5Jte2dexSg6OBxcsxJyss+qHJFi/Ego0NGuvitCkBXDwaw==}
 
   '@rollup/plugin-alias@5.1.1':
     resolution: {integrity: sha512-PR9zDb+rOzkRb2VD+EuKB7UC41vU5DIwZ5qqCpk0KJudcWAyi8rvYOhS7+L5aZCspw1stTViLgN5v6FF1p5cgQ==}
@@ -2507,6 +2544,11 @@ packages:
     resolution: {integrity: sha512-mQUvGU6aUFQ+rNvTIAcZuWGRT9a6f6Yrg9bHs4ImKF+HZCEK+plBvnAZYSIQztknZF2qnzNtr6F8s0+IuptdlQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
+  prisma@5.21.0:
+    resolution: {integrity: sha512-Pc/xn2eZPiANbFFGp+YoCQSKQ5t9W/dBzQ+3HrcfrOWZAzt7n77VsVCPa9WdfTjim4CuodkCFyiP2+uGY5/gqw==}
+    engines: {node: '>=16.13'}
+    hasBin: true
+
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
@@ -3949,6 +3991,48 @@ snapshots:
     optional: true
 
   '@polka/url@1.0.0-next.28': {}
+
+  '@prisma/client@5.21.0(prisma@5.21.0)':
+    optionalDependencies:
+      prisma: 5.21.0
+
+  '@prisma/debug@5.21.0': {}
+
+  '@prisma/engines-version@5.21.0-36.08713a93b99d58f31485621c634b04983ae01d95': {}
+
+  '@prisma/engines@5.21.0':
+    dependencies:
+      '@prisma/debug': 5.21.0
+      '@prisma/engines-version': 5.21.0-36.08713a93b99d58f31485621c634b04983ae01d95
+      '@prisma/fetch-engine': 5.21.0
+      '@prisma/get-platform': 5.21.0
+
+  '@prisma/fetch-engine@5.21.0':
+    dependencies:
+      '@prisma/debug': 5.21.0
+      '@prisma/engines-version': 5.21.0-36.08713a93b99d58f31485621c634b04983ae01d95
+      '@prisma/get-platform': 5.21.0
+
+  '@prisma/get-platform@5.21.0':
+    dependencies:
+      '@prisma/debug': 5.21.0
+
+  '@prisma/nuxt@0.0.35(magicast@0.3.5)(prisma@5.21.0)(rollup@4.24.0)(vite@5.4.9(@types/node@22.7.5)(terser@5.34.1))':
+    dependencies:
+      '@nuxt/devtools-kit': 1.6.0(magicast@0.3.5)(rollup@4.24.0)(vite@5.4.9(@types/node@22.7.5)(terser@5.34.1))
+      '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.24.0)
+      '@prisma/client': 5.21.0(prisma@5.21.0)
+      chalk: 5.3.0
+      defu: 6.1.4
+      execa: 8.0.1
+      prompts: 2.4.2
+    transitivePeerDependencies:
+      - magicast
+      - prisma
+      - rollup
+      - supports-color
+      - vite
+      - webpack-sources
 
   '@rollup/plugin-alias@5.1.1(rollup@4.24.0)':
     optionalDependencies:
@@ -5871,6 +5955,12 @@ snapshots:
       source-map-js: 1.2.1
 
   pretty-bytes@6.1.1: {}
+
+  prisma@5.21.0:
+    dependencies:
+      '@prisma/engines': 5.21.0
+    optionalDependencies:
+      fsevents: 2.3.3
 
   process-nextick-args@2.0.1: {}
 
